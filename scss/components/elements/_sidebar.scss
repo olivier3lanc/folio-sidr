@@ -1,0 +1,592 @@
+//Only if sidebar display is set to true
+@if(map-get($sidebar, display) == true){
+    .sidebar {
+        background-color: map-get($sidebar, background_color);
+        min-height: 100vh;
+        padding-bottom: 3.5em;
+        header {
+            position: relative;
+            text-align: center;
+            padding: map-get($sidebar, padding)+$font_size_unit;
+            border-bottom: 1px solid rgba(map-get($sidebar, separator_color), map-get($sidebar, separator_opacity));
+            h1, h2, h3, h4, h5, h6 {
+                margin: 1em;
+            }
+            h1 {
+                margin: 0;
+                line-height: map-get($sidebar, title_line_height)+$font_size_unit;
+                letter-spacing: map-get($sidebar, title_letter_spacing)+$font_size_unit;
+                text-transform: map-get($sidebar, title_text_transform);
+                font-size: map-get($sidebar, title_font_size)+$font_size_unit;
+                font-family: map-get($sidebar, title_font_family);
+                color: map-get($sidebar, title_color);
+            }
+            p {
+                font-family: map-get($sidebar, paragraph_font_family);
+                font-size: map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                line-height: map-get($sidebar, paragraph_line_height)+$font_size_unit;
+                letter-spacing: map-get($sidebar, paragraph_letter_spacing)+$font_size_unit;
+            }
+        }
+        @include qtr-screen(lg){
+            header {
+                padding: (0.9 * map-get($sidebar, padding))+$font_size_unit;
+                h1 {
+                    font-size: (0.9 * map-get($sidebar, title_font_size))+$font_size_unit;
+                }
+                p {
+                    font-size: 0.9 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+        }
+        @include qtr-screen(md){
+            header {
+                padding: (0.8 * map-get($sidebar, padding))+$font_size_unit;
+                h1 {
+                    font-size: (0.8 * map-get($sidebar, title_font_size))+$font_size_unit;
+                }
+                p {
+                    font-size: 0.8 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+        }
+        @include qtr-screen(sm){
+            header {
+                padding: (0.65 * map-get($sidebar, padding))+$font_size_unit;
+                h1 {
+                    font-size: (0.65 * map-get($sidebar, title_font_size))+$font_size_unit;
+                }
+                p {
+                    font-size: 0.65 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+        }
+        @include qtr-screen(xs){
+            header {
+                padding: 0.5 * map-get($sidebar, padding)+$font_size_unit;
+                h1 {
+                    font-size: 0.5 * map-get($sidebar, title_font_size)+$font_size_unit;
+                }
+                p {
+                    font-size: 0.5 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+        }
+        nav {
+            ul {
+                list-style: none;
+                padding: 0em;
+                margin: 0em;
+                li {
+                    position: relative;
+                    width: 100%;
+                    &>.media {
+                        position: absolute;
+                        overflow: hidden;
+                        margin: 0em;
+                        padding: 0em;
+                        z-index: 8;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+                        &>img {
+                            display: none;
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            z-index: 10;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            @include qtr-transition(background-color $qtr_transition_time);
+                            background-color: rgba(map-get($sidebar, media_overlay_color), map-get($sidebar, media_overlay_opacity));
+                        }
+                    }
+
+                    &>.table {
+                        position: absolute;
+                        z-index: 10;
+                        top: 0;
+                        @if(map-get($sidebar, alignment) == left){
+                            left: 0;
+                        }@else{
+                            right: 0;
+                        }
+                        // left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: table;
+                        opacity: map-get($sidebar, media_text_opacity);
+                        @include qtr-transition(opacity $qtr_transition_time);
+                        text-align: center;
+                        &>.cell {
+                            display: table-cell;
+                            vertical-align: middle;
+                            padding: 0em;
+                            h2 {
+                                margin: 0em auto;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                padding-left: 1em;
+                                padding-right: 1em;
+                                font-family: map-get($sidebar, media_text_font_family);
+                                font-size: map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                text-transform: map-get($sidebar, media_text_transform);
+                                color: map-get($sidebar, media_text_color);
+                                line-height: map-get($sidebar, media_text_line_height)+$font_size_unit;
+                                letter-spacing: map-get($sidebar, media_text_letter_spacing)+$font_size_unit;
+                            }
+                            @include qtr-screen-xl {
+                                h2 {
+                                    width: map-get($sidebar, width)+$font_size_unit;
+                                    font-size: 0.9 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                }
+                            }
+                            @include qtr-screen-lg {
+                                h2 {
+                                    width: map-get($sidebar, width_lg)+$font_size_unit;
+                                    font-size: 0.9 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                }
+                            }
+                            @include qtr-screen-md {
+                                h2 {
+                                    width: map-get($sidebar, width_md)+$font_size_unit;
+                                    font-size: 0.8 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                }
+                            }
+                            @include qtr-screen-sm {
+                                h2 {
+                                    width: map-get($sidebar, width_sm)+$font_size_unit;
+                                    font-size: 0.75 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                }
+                            }
+                            @include qtr-screen-xs {
+                                h2 {
+                                    width: map-get($sidebar, width_xs)+$font_size_unit;
+                                    font-size: 0.7 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                }
+                            }
+                        }
+                    }
+
+                    //Arrow
+                    // &>.arrow {
+                    //     visibility: hidden;
+                    //     display: block;
+                    //     position: absolute;
+                    //     top: 50%;
+                    //     width: map-get($sidebar, media_height)*0.5+$font_size_unit;
+                    //     height: map-get($sidebar, media_height)*0.5+$font_size_unit;
+                    //     margin-top: -#{map-get($sidebar, media_height)/4}#{$font_size_unit};
+                    //     @include qtr-transform(rotate(45deg));
+                    //     @if(map-get($sidebar, alignment) == left){
+                    //         right: map-get($sidebar, media_height)+$font_size_unit;
+                    //     }@else{
+                    //         right: map-get($sidebar, media_height)+$font_size_unit;
+                    //     }
+                    // }
+                    input[type=radio]{
+                        display: none;
+                        &:checked {
+                            &+.table {
+                                opacity: 1;
+                                // background-color: map-get($sidebar, media_overlay_color_active);
+                                &>.table {
+                                    &>.cell {
+                                        h2 {
+                                            // margin-top: 1em;
+                                            // margin-bottom: 1em;
+                                        }
+                                    }
+                                }
+                                &+.media {
+                                    opacity: 0;
+                                    &+.arrow {
+                                        visibility:visible;
+                                        @if(map-get($sidebar, alignment) == left){
+                                            right: 0em;
+                                        }@else{
+                                            left: 0em;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    label {
+                        cursor: pointer;
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 20;
+                    }
+                    //Group Management
+                    &[data-groupid] {
+                        //Group item
+                        &>.table {
+                            opacity: 1;
+                            padding: 1em;
+                            &>.cell {
+                                h2 {
+                                    white-space: normal;
+                                    text-overflow: inherit;
+                                    overflow: inherit;
+                                    width: inherit;
+                                }
+                                &.next-button {
+                                    width: map-get($sidebar, media_text_font_size)*2+$font_size_unit;
+                                }
+                                @if(map-get($sidebar, alignment) == left){
+                                    h2 {
+                                        text-align: right;
+                                        padding-right: 1em;
+                                    }
+                                    &.next-button {
+                                        text-align: right;
+                                        &.right {
+                                            display: none;
+                                        }
+                                        &.left {
+                                            border-left: 1px solid rgba(map-get($sidebar, separator_color),map-get($sidebar, separator_opacity));
+                                        }
+                                    }
+                                }@else{
+                                    h2 {
+                                        text-align: left;
+                                        padding-left: 1em;
+                                    }
+                                    &.next-button {
+                                        text-align: left;
+                                        &.left {
+                                            display: none;
+                                        }
+                                        &.right {
+                                            border-right: 1px solid rgba(map-get($sidebar, separator_color),map-get($sidebar, separator_opacity));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &>.media {
+                            &:after {
+                                background-color: rgba(map-get($sidebar, background_color), 0.8);
+                            }
+                        }
+                        input[name=groupnav][type=radio]{
+                            &+ul[data-groupid] {
+                                height: 0;
+                                overflow: hidden;
+                                background-color: $color_primary;
+                                transition: left $qtr_transition_time, right $qtr_transition_time, opacity $qtr_transition_time;
+                                //Scenes/group items into a group
+                                &>li {
+                                    &.group-heading {
+                                        border-bottom: 1px solid rgba(map-get($sidebar, separator_color),map-get($sidebar, separator_opacity));
+                                        &>.table {
+                                            position: inherit;
+                                            opacity: 1;
+                                            &>.cell {
+                                                &.group-title {
+                                                    font-size: map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                                    font-family: map-get($sidebar, media_text_font_family);
+                                                    text-transform: map-get($sidebar, media_text_transform);
+                                                    line-height: 1.2em;
+                                                    @if(map-get($sidebar, alignment) == left){
+                                                        text-align: left;
+                                                        padding-top: 1.7em;
+                                                        padding-right: 1.0em;
+                                                        padding-bottom: 1.7em;
+                                                        padding-left: map-get($sidebar, media_text_font_size)*2+$font_size_unit;
+                                                    }@else{
+                                                        text-align: right;
+                                                        padding-top: 1.7em;
+                                                        padding-right: map-get($sidebar, media_text_font_size)*2+$font_size_unit;
+                                                        padding-bottom: 1.7em;
+                                                        padding-left: 1.0em;
+
+                                                    }
+                                                }
+                                                @include qtr-screen(lg){
+                                                    &.group-title {
+                                                        font-size: 0.9 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                                    }
+                                                }
+                                                @include qtr-screen(md){
+                                                    &.group-title {
+                                                        font-size: 0.8 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                                    }
+                                                }
+                                                @include qtr-screen(sm){
+                                                    &.group-title {
+                                                        font-size: 0.75 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                                    }
+                                                }
+                                                @include qtr-screen(xs){
+                                                    &.group-title {
+                                                        font-size: 0.7 * map-get($sidebar, media_text_font_size)+$font_size_unit;
+                                                    }
+                                                }
+                                                &.back-button {
+                                                    line-height: 0em;
+                                                    vertical-align: middle;
+                                                    cursor: pointer;
+                                                    width: map-get($sidebar, media_text_font_size)*6+$font_size_unit;
+                                                    font-size: map-get($sidebar, media_text_font_size)*0.8+$font_size_unit;
+                                                    transition: all $qtr_transition_time;
+                                                    @if(map-get($sidebar, alignment) == left){
+                                                        border-right: 1px solid rgba(map-get($sidebar, separator_color),map-get($sidebar, separator_opacity));
+                                                        &.left {
+                                                            display: none;
+                                                        }
+                                                    }@else{
+                                                        border-left: 1px solid rgba(map-get($sidebar, separator_color),map-get($sidebar, separator_opacity));
+                                                        &.right {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                    &:hover {
+                                                        color: rgba(map-get($sidebar, separator_color),1);
+                                                        border-color: rgba(map-get($sidebar, separator_color),1);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                //perfectScrollbar tweaks
+                                &.ps-container {
+                                    &.ps-active-y {
+                                        &>.ps-scrollbar-y-rail {
+                                            opacity: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            @include qtr-screen(xl){
+                                &+ul[data-groupid] {
+                                    // padding-top: map-get($sidebar, width)/2+$font_size_unit;
+                                    width: map-get($sidebar, width)+$font_size_unit;
+                                    @if(map-get($sidebar, alignment) == left) {
+                                        left: - map-get($sidebar, width)+$font_size_unit;
+                                    }@else{
+                                        right: - map-get($sidebar, width)+$font_size_unit;
+                                    }
+                                }
+                            }
+                            @include qtr-screen(lg){
+                                &+ul[data-groupid] {
+                                    padding-top: map-get($sidebar, width_lg)/2+$font_size_unit;
+                                    width: map-get($sidebar, width_lg)+$font_size_unit;
+                                    @if(map-get($sidebar, alignment) == left) {
+                                        left: - map-get($sidebar, width_lg)+$font_size_unit;
+                                    }@else{
+                                        right: - map-get($sidebar, width_lg)+$font_size_unit;
+                                    }
+                                }
+                            }
+                            @include qtr-screen(md){
+                                &+ul[data-groupid] {
+                                    padding-top: map-get($sidebar, width_md)/2+$font_size_unit;
+                                    width: map-get($sidebar, width_md)+$font_size_unit;
+                                    @if(map-get($sidebar, alignment) == left) {
+                                        left: - map-get($sidebar, width_md)+$font_size_unit;
+                                    }@else{
+                                        right: - map-get($sidebar, width_md)+$font_size_unit;
+                                    }
+                                }
+                            }
+                            @include qtr-screen(sm){
+                                &+ul[data-groupid] {
+                                    padding-top: map-get($sidebar, width_sm)/2+$font_size_unit;
+                                    width: map-get($sidebar, width_sm)+$font_size_unit;
+                                    @if(map-get($sidebar, alignment) == left) {
+                                        left: - map-get($sidebar, width_sm)+$font_size_unit;
+                                    }@else{
+                                        right: - map-get($sidebar, width_sm)+$font_size_unit;
+                                    }
+                                }
+                            }
+                            @include qtr-screen(xs){
+                                &+ul[data-groupid] {
+                                    padding-top: map-get($sidebar, width_xs)/2+$font_size_unit;
+                                    width: map-get($sidebar, width_xs)+$font_size_unit;
+                                    @if(map-get($sidebar, alignment) == left) {
+                                        left: - map-get($sidebar, width_xs)+$font_size_unit;
+                                    }@else{
+                                        right: - map-get($sidebar, width_xs)+$font_size_unit;
+                                    }
+                                }
+                            }
+                            &:checked {
+                                &+ul[data-groupid] {
+                                    height: 100%;
+                                    position: fixed;
+                                    overflow: inherit;
+                                    top: 0;
+                                    z-index: 100;
+                                    box-shadow: 0px 0px 10px #000;
+                                    @if(map-get($sidebar, alignment) == left){
+                                        left: 0;
+                                    }@else{
+                                        right: 0;
+                                    }
+                                    &>li {
+                                        &.group-heading {
+                                            position: fixed;
+                                            top: 0;
+                                            @if(map-get($sidebar, alignment) == left){
+                                                left: 0;
+                                            }@else{
+                                                right: 0;
+                                            }
+                                            // left: 0;
+
+                                            // width: map-get($sidebar, width)+$font_size_unit;
+                                            z-index: 155;
+                                            background-color: map-get($sidebar, background_color);
+                                            &>.table {
+                                                // height: map-get($sidebar, media_height)/1.5+$font_size_unit;
+                                                // padding: 1em;
+                                            }
+                                        }
+                                        @include qtr-screen(xl){
+                                            &.group-heading {
+                                                width: map-get($sidebar, width)+$font_size_unit;
+                                                height: map-get($sidebar, width)/2+$font_size_unit;
+                                                &>.table {
+                                                    width: map-get($sidebar, width)+$font_size_unit;
+                                                    height: map-get($sidebar, width)/2+$font_size_unit;
+                                                }
+                                            }
+                                        }
+                                        @include qtr-screen(lg){
+                                            &.group-heading {
+                                                width: map-get($sidebar, width_lg)+$font_size_unit;
+                                                height: map-get($sidebar, width_lg)/2+$font_size_unit;
+                                                &>.table {
+                                                    width: map-get($sidebar, width_lg)+$font_size_unit;
+                                                    height: map-get($sidebar, width_lg)/2+$font_size_unit;
+                                                }
+                                            }
+                                        }
+                                        @include qtr-screen(md){
+                                            &.group-heading {
+                                                width: map-get($sidebar, width_md)+$font_size_unit;
+                                                height: map-get($sidebar, width_md)/2+$font_size_unit;
+                                                &>.table {
+                                                    width: map-get($sidebar, width_md)+$font_size_unit;
+                                                    height: map-get($sidebar, width_md)/2+$font_size_unit;
+                                                }
+                                            }
+                                        }
+                                        @include qtr-screen(sm){
+                                            &.group-heading {
+                                                width: map-get($sidebar, width_sm)+$font_size_unit;
+                                                height: map-get($sidebar, width_sm)/2+$font_size_unit;
+                                                &>.table {
+                                                    width: map-get($sidebar, width_sm)+$font_size_unit;
+                                                    height: map-get($sidebar, width_sm)/2+$font_size_unit;
+                                                }
+                                            }
+                                        }
+                                        @include qtr-screen(xs){
+                                            &.group-heading {
+                                                width: map-get($sidebar, width_xs)+$font_size_unit;
+                                                height: map-get($sidebar, width_xs)/2+$font_size_unit;
+                                                &>.table {
+                                                    width: map-get($sidebar, width_xs)+$font_size_unit;
+                                                    height: map-get($sidebar, width_xs)/2+$font_size_unit;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                            }
+                        }
+                    }
+                    //Hover
+                    &:hover {
+                        &>.table {
+                            opacity: map-get($sidebar, media_text_opacity_hover);
+                        }
+                        &>.media {
+                            &:after {
+                                background-color: rgba(map-get($sidebar, media_overlay_color_hover), map-get($sidebar, media_overlay_opacity_hover));
+                            }
+                        }
+                        &[data-groupid] {
+                            &>.media {
+                                &:after {
+                                    background-color: rgba(map-get($sidebar, background_color), 0.95);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @include qtr-screen(xl){
+                    li {
+                        height: map-get($sidebar, width) / 2+$font_size_unit;
+                    }
+                }
+                @include qtr-screen(lg){
+                    li {
+                        height: map-get($sidebar, width_lg) / 2+$font_size_unit;
+                    }
+                }
+                @include qtr-screen(md){
+                    li {
+                        height: map-get($sidebar, width_md) / 2+$font_size_unit;
+                    }
+                }
+                @include qtr-screen(sm){
+                    li {
+                        height: map-get($sidebar, width_sm) / 2+$font_size_unit;
+                    }
+                }
+                @include qtr-screen(xs){
+                    li {
+                        height: map-get($sidebar, width_xs) / 2+$font_size_unit;
+                    }
+                }
+            }
+        }
+        footer {
+            clear: both;
+            text-align: center;
+            padding-top: 3.5em;
+            @include qtr-screen(lg){
+                p {
+                    font-size: 0.8 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+            @include qtr-screen(md){
+                p {
+                    font-size: 0.7 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+            @include qtr-screen(sm){
+                p {
+                    font-size: 0.6 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+            @include qtr-screen(xs){
+                p {
+                    font-size: 0.5 * map-get($sidebar, paragraph_font_size)+$font_size_unit;
+                }
+            }
+        }
+    }
+}

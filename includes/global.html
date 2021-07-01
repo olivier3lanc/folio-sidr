@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Global settings</title>
+
+    <meta name="medium" content="mult">
+    <meta name="video_height" content="480"></meta>
+    <meta name="video_width" content="640"></meta>
+    <!-- <meta name="directory" content="PATH/"></meta> -->
+    <!-- <link rel="target_url" href="index.html" /> -->
+    <meta name="generator" content="Panotour Pro V2.5.5 64bits">
+    <meta name="author" content="Kolor | GoPro">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- Custom theme -->
+    <link rel="stylesheet" href="../css/allinone.css">
+    <script type="text/javascript" src="../indexdata/lib/jquery-2.1.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Headings</h1>
+            </div>
+            <div class="col-8">
+
+                <h1 class="">H1 Heading</h1>
+                <h2 class="">H2 Heading</h2>
+                <h3 class="">H3 Heading</h3>
+                <h4 class="">H4 Heading</h4>
+                <h5 class="">H5 Heading</h5>
+                <h6 class="">H6 Heading</h6>
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Paragraphs</h1>
+            </div>
+            <div class="col-8">
+                <p>This is a paragraph. Col Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <a href="#">link text</a> veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <abbr title="attribute">attr</abbr>            deserunt mollit anim id est laborum.</p>
+                <p>This is a paragraph. Col Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Fonts</h1>
+            </div>
+            <div class="col-8">
+                <p class="font-family-primary-name font-size-xlarge"></p>
+                <p class="font-family-secondary-name font-size-xlarge"></p>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Colors</h1>
+            </div>
+            <div class="col-8">
+
+                <span class="color color-primary-contrast-max"></span>
+                <span class="color text">Contrast max</span>
+                <br>
+
+                <span class="color color-primary-contrast-5"></span>
+                <span class="color text">Contrast 5</span>
+                <br>
+
+                <span class="color color-primary-contrast-4"></span>
+                <span class="color text">Contrast 4</span>
+                <br>
+
+                <span class="color color-primary-contrast-3"></span>
+                <span class="color text">Contrast 3</span>
+                <br>
+
+                <span class="color color-primary-contrast-2"></span>
+                <span class="color text">Contrast 2</span>
+                <br>
+
+                <span class="color color-primary-contrast-1"></span>
+                <span class="color text">Contrast 1</span>
+                <br>
+
+                <span class="color color-primary"></span>
+                <span class="color text">Color primary</span>
+                <br>
+
+                <span class="color color-primary-contrast-accent-1"></span>
+                <span class="color text">Contrast accent 1</span>
+                <br>
+
+                <span class="color color-primary-contrast-accent-2"></span>
+                <span class="color text">Contrast accent 2</span>
+                <br>
+
+                <span class="color color-primary-contrast-accent-3"></span>
+                <span class="color text">Contrast accent 3</span>
+                <br>
+
+                <span class="color color-primary-contrast-accent-4"></span>
+                <span class="color text">Contrast accent 4</span>
+                <br>
+
+                <span class="color color-primary-contrast-accent-5"></span>
+                <span class="color text">Contrast accent 5</span>
+                <br>
+
+                <span class="color color-primary-contrast-accent-max"></span>
+                <span class="color text">Contrast accent max</span>
+                <br>
+
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Grid system</h1>
+            </div>
+            <div class="col-8">
+                <h4 class="font-size-large-responsive uppercase">Markup</h4>
+                <p>How the grid system works. A row <code class="highlight-code">.row</code> is mandatory, it can include as many columns <code class="highlight-code">.col-*</code> as you want. Columns <code class="highlight-code">.col-*</code> can be customized.</p>
+                <p>There are 12 relative widths per column and per <a href="#screen-sizes">screen sizes</a>.</p>
+                <p>The row uccupies all the possible width, that depends on its container which is not included into this framework.</p>
+                <code class="highlight-code">
+<pre>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-*&quot;&gt;&lt;/div&gt;
+    ...
+    &lt;div class=&quot;col-*&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                </code>
+                <hr>
+                <h4 class="font-size-large-responsive uppercase" id="screen-sizes">Screen sizes</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Screen sizes</th>
+                            <th>Description</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td>Extra-small</td>
+                            <td>From zero to <span class="breakpoint screen-mini"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>From <span class="breakpoint screen-mini"></span> to <span class="breakpoint screen-small"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td>From <span class="breakpoint screen-small"></span> to <span class="breakpoint screen-medium"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            <td>From <span class="breakpoint screen-medium"></span> to <span class="breakpoint screen-large"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Extra-Large</td>
+                            <td>Above <span class="breakpoint screen-large"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+                <h4 class="font-size-large-responsive uppercase">Default widths</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CSS class</th>
+                            <th>Description</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td><code class="highlight-code">col-1</code></td>
+                            <td>1/12 (8.33%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-2</code></td>
+                            <td>2/12 (16.66%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-3</code></td>
+                            <td>3/12 (25%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-4</code></td>
+                            <td>4/12 (33.33%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-5</code></td>
+                            <td>5/12 (41.66%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-6</code></td>
+                            <td>6/12 (50%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-7</code></td>
+                            <td>7/12 (58.33%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-8</code></td>
+                            <td>8/12 (66.66%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-9</code></td>
+                            <td>9/12 (75%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-10</code></td>
+                            <td>10/12 (75%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-11</code></td>
+                            <td>11/12 (91.66%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="highlight-code">col-12</code></td>
+                            <td>12/12 (100%) of the parent <code class="highlight-code">.row</code> width.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+                <h4 class="font-size-large-responsive uppercase">Responsive widths</h4>
+                <p>Here are the columns width in percentage according to screen sizes.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CSS class</th>
+                            <th>Extra-small</th>
+                            <th>Small</th>
+                            <th>Medium</th>
+                            <th>Large</th>
+                            <th>Extra-large</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-1</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">8.33%</td>
+                            <td data-th="Large">8.33%</td>
+                            <td data-th="Extra-large">8.33%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-2</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">16.66%</td>
+                            <td data-th="Large">16.66%</td>
+                            <td data-th="Extra-large">16.66%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-3</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">25%</td>
+                            <td data-th="Large">25%</td>
+                            <td data-th="Extra-large">25%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-4</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">33.33%</td>
+                            <td data-th="Large">33.33%</td>
+                            <td data-th="Extra-large">33.33%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-5</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">41.66%</td>
+                            <td data-th="Large">41.66%</td>
+                            <td data-th="Extra-large">41.66%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-6</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">50%</td>
+                            <td data-th="Large">50%</td>
+                            <td data-th="Extra-large">50%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-7</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">58.33%</td>
+                            <td data-th="Large">58.33%</td>
+                            <td data-th="Extra-large">58.33%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-8</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">66.66%</td>
+                            <td data-th="Large">66.66%</td>
+                            <td data-th="Extra-large">66.66%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-9</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">75%</td>
+                            <td data-th="Large">75%</td>
+                            <td data-th="Extra-large">75%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-10</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">83.33%</td>
+                            <td data-th="Large">83.33%</td>
+                            <td data-th="Extra-large">83.33%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-11</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">91.66%</td>
+                            <td data-th="Large">91.66%</td>
+                            <td data-th="Extra-large">91.66%</td>
+                        </tr>
+                        <tr>
+                            <td data-th="CSS class"><code class="highlight-code">col-12</code></td>
+                            <td data-th="Extra-small">100%</td>
+                            <td data-th="Small">100%</td>
+                            <td data-th="Medium">100%</td>
+                            <td data-th="Large">100%</td>
+                            <td data-th="Extra-large">100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Basic Grid<br>
+                    <small>full width</small>
+                </h1>
+            </div>
+            <div class="col-8">
+                <p>Here is the grid with minimal CSS width classes into a <strong>full width</strong> container. The container is not included into the framework.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container full-width">
+        <div class="row">
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-5 grid">col-5</div>
+            <div class="col-5 grid">col-5</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-6 grid">col-6</div>
+            <div class="col-6 grid">col-6</div>
+            <div class="col-7 grid">col-7</div>
+            <div class="col-5 grid">col-5</div>
+            <div class="col-8 grid">col-8</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-9 grid">col-9</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-10 grid">col-10</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-11 grid">col-11</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-12 grid">col-12</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Basic Grid<br>
+                    <small>limited width</small>
+                </h1>
+            </div>
+            <div class="col-8">
+                <p>Here is the grid with minimal CSS width classes into a limited width container. The container is not included into the framework.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container limited-width">
+        <div class="row">
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-5 grid">col-5</div>
+            <div class="col-5 grid">col-5</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-6 grid">col-6</div>
+            <div class="col-6 grid">col-6</div>
+            <div class="col-7 grid">col-7</div>
+            <div class="col-5 grid">col-5</div>
+            <div class="col-8 grid">col-8</div>
+            <div class="col-4 grid">col-4</div>
+            <div class="col-9 grid">col-9</div>
+            <div class="col-3 grid">col-3</div>
+            <div class="col-10 grid">col-10</div>
+            <div class="col-2 grid">col-2</div>
+            <div class="col-11 grid">col-11</div>
+            <div class="col-1 grid">col-1</div>
+            <div class="col-12 grid">col-12</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Custom Grid</h1>
+            </div>
+            <div class="col-8">
+                <p>Assign width according to viewport width.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container full-width">
+        <div class="row">
+            <div class="col-4 col-sm-4 grid">
+                <code class="highlight-code">col-4 col-sm-4</code>
+                <p>Default width 25%</p>
+                <p>Force width 25% for small devices</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Lists</h1>
+            </div>
+            <div class="col-8">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                    <li>Facilisis in pretium nisl aliquet</li>
+                    <li>Nulla volutpat aliquam velit
+                        <ul>
+                            <li>Phasellus iaculis neque</li>
+                            <li>Purus sodales ultricies</li>
+                            <li>Vestibulum laoreet porttitor sem</li>
+                            <li>Ac tristique libero volutpat at</li>
+                        </ul>
+                    </li>
+                    <li>Faucibus porta lacus fringilla vel</li>
+                    <li>Aenean sit amet erat nunc</li>
+                    <li>Eget porttitor lorem</li>
+                </ul>
+
+                <ol>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                    <li>Facilisis in pretium nisl aliquet</li>
+                    <li>Nulla volutpat aliquam velit
+                        <ul>
+                            <li>Phasellus iaculis neque</li>
+                            <li>Purus sodales ultricies</li>
+                            <li>Vestibulum laoreet porttitor sem</li>
+                            <li>Ac tristique libero volutpat at</li>
+                        </ul>
+                    </li>
+                    <li>Faucibus porta lacus fringilla vel</li>
+                    <li>Aenean sit amet erat nunc</li>
+                    <li>Eget porttitor lorem</li>
+                </ol>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Buttons</h1>
+            </div>
+            <div class="col-8">
+                <p>Small button
+                    <br>
+                    <button type="button" name="button" class="btn btn-default btn-xs">Default</button>
+                    <button type="button" name="button" class="btn btn-primary btn-xs">Primary</button>
+                </p>
+                <p>Standard button
+                    <br>
+                    <button type="button" name="button" class="btn btn-default">Default</button>
+                    <button type="button" name="button" class="btn btn-primary">Primary</button>
+                </p>
+                <p>Large button
+                    <br>
+                    <button type="button" name="button" class="btn btn-default btn-xl">Default</button>
+                    <button type="button" name="button" class="btn btn-primary btn-xl">Primary</button>
+                </p>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Address</h1>
+            </div>
+            <div class="col-8">
+                <address>
+                    <strong>Twitter, Inc.</strong><br>
+                    1355 Market Street, Suite 900<br>
+                    San Francisco, CA 94103<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Code</h1>
+            </div>
+            <div class="col-8">
+                <!-- <pre>
+                &lt;ol&gt;
+                    &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+                    &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+                    &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
+                    &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+                    &lt;li&gt;Nulla volutpat aliquam velit
+                        &lt;ul&gt;
+                            &lt;li&gt;Phasellus iaculis neque&lt;/li&gt;
+                            &lt;li&gt;Purus sodales ultricies&lt;/li&gt;
+                            &lt;li&gt;Vestibulum laoreet porttitor sem&lt;/li&gt;
+                            &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
+                    &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
+                    &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
+                &lt;/ol&gt;
+                </pre> -->
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Quotes</h1>
+            </div>
+            <div class="col-8">
+                <blockquote>
+                    <p>It is a press, certainly, but a press from which shall flow in inexhaustible streams… Through it, god will spread his word.</p>
+                    <footer>
+                        <cite>—Johannes Gutenberg</cite>
+                    </footer>
+                </blockquote>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="heading">Utilities</h1>
+            </div>
+            <div class="col-8">
+                <p class="font-size-xxxxxlarge mg0">class="xxxxxlarge"</p>
+                <p class="font-size-xxxxlarge mg0">class="xxxxlarge"</p>
+                <p class="font-size-xxxlarge mg0">class="xxxlarge"</p>
+                <p class="font-size-xxlarge mg0">xclass="xlarge"</p>
+                <p class="font-size-xlarge mg0">class="xlarge"</p>
+                <p class="font-size-large mg0">class="large"</p>
+                <p class="font-size-base mg0">class="base"</p>
+                <p class="font-size-small mg0">class="small"</p>
+                <p class="font-size-xsmall mg0">class="xsmall"</p>
+                <p class="font-size-xxsmall mg0">class="xxsmall"</p>
+                <p class="font-size-xxxsmall mg0">class="xxxsmall"</p>
+                <p class="font-size-xxxxsmall mg0">class="xxxxsmall"</p>
+                <p class="font-size-xxxxxsmall mg0">class="xxxxxsmall"</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<!-- Starter Template 2016/07 -->
+
+</html>

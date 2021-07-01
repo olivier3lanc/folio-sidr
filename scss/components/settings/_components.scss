@@ -1,0 +1,415 @@
+/**
+* COMPONENTS SETTINGS FOR STARTER TEMPLATE
+* Main variables set by the user
+*/
+//Parallax over viewer
+$parallax:                              false;
+
+//Sidebar Settings
+$sidebar: (
+    display:                                             true,
+    alignment:                                           left,
+    width:                                               20,
+    width_lg:                                            20,
+    width_md:                                            15,
+    width_sm:                                            10,
+    width_xs:                                            8,
+    background_color:                                    qtr-color(),
+    color:                                               qtr-color(5),
+    padding:                                             2.5,
+    separator_color:                                     qtr-color(5),
+    separator_opacity:                                   0.5,
+    title_font_family:                                   qtr-font-family(1),
+    title_font_size:                                     $font_size_xxlarge,
+    title_color:                                         qtr-color(5),
+    title_line_height:                                   1.2,
+    title_letter_spacing:                                -0.05,
+    title_text_transform:                                none,
+    paragraph_font_family:                               qtr-font-family(2),
+    paragraph_font_size:                                 $font_size_small,
+    paragraph_line_height:                               1.6,
+    paragraph_letter_spacing:                            0,
+    media_height:                                        10,
+    media_overlay_color:                                 qtr-color(-6),
+    media_overlay_color_hover:                           qtr-color(-6),
+    media_overlay_color_active:                          qtr-color(1),
+    media_overlay_color_active_opacity:                  1,
+    media_overlay_opacity:                               0,
+    media_overlay_opacity_hover:                         0.8,
+    media_text_font_family:                              qtr-font-family(1),
+    media_text_font_size:                                $font_size_xxxxsmall,
+    media_text_color:                                    qtr-color(6),
+    media_text_opacity:                                  0,
+    media_text_opacity_hover:                            1,
+    media_text_line_height:                              1.5,
+    media_text_letter_spacing:                           0.05,
+    media_text_transform:                                uppercase
+);
+
+
+$control_bars: (
+    default: (
+        display:                                    true, //{boolean} Global display
+        screen_xl:                                  true, //{boolean} Display or not on screen xl
+        screen_lg:                                  true, //{boolean} Display or not on screen lg
+        screen_md:                                  true, //{boolean} Display or not on screen md
+        screen_sm:                                  true, //{boolean} Display or not on screen sm
+        screen_xs:                                  true, //{boolean} Display or not on screen xs
+        scale_xl:                                   1.0, //{number} Scale factor for screen xl
+        scale_lg:                                   1.0, //{number} Scale factor for screen lg
+        scale_md:                                   1.0, //{number} Scale factor for screen md
+        scale_sm:                                   0.7, //{number} Scale factor for screen sm
+        scale_xs:                                   0.5, //{number} Scale factor for screen xs
+        position:                                   bottom, //{css value}  top, middle, bottom - Position of the control bar
+        alignment:                                  right, //{css value} left, center, right - Alignment of the control bar
+        offsetX:                                    1, //{number} Horizontal offset (does not apply on center alignment)
+        offsetY:                                    1, //{number} Vertical offset (does not apply on middle position)
+        autohide:                                   true, //{boolean} Enable/diable automatic hide of control bar (Only available for top/center and bottom/center)
+        control_width:                              4, //{number} Width of the control (independant from the media size inside)
+        control_height:                             4, //{number} Height of the control (independant from the media size inside)
+        control_position:                           middle, //{css value} Determines origin of horizontal alignment
+        control_media_size:                         $font_size_base, //{number} Size of the media or text
+        control_media_position:                     middle, //{css value} top, middle, bottom - Position of the text/media inside its container
+        control_media_alignment:                    center, //{css value} left, center, right - Alignment of the text/media inside its container
+        control_media_color:                        qtr-color(6), //{css value} Color of the text/media
+        control_media_color_hover:                  qtr-color(6), //{css value} Color:hover of the text/media
+        control_background_color:                   qtr-color(-6), //{css value} Background color of the text/media container
+        control_background_color_hover:             qtr-color(-6), //{css value} Background color:hover of the text/media container
+        control_background_color_opacity:           0, //{number} Background opacity of the text/media container
+        control_background_color_opacity_hover:     0.85, //{number} Background opacity:hover of the text/media container
+        control_shadow:                             true, //{boolean} Enable / disable control shadow
+            control_shadowX:                            0, //{number} Horizontal offset (available only if control_shadow == true)
+            control_shadowX_hover:                      0, //{number} Horizontal offset when :hover (available only if control_shadow == true)
+            control_shadowY:                            0, //{number} Vertical offset (available only if control_shadow == true)
+            control_shadowY_hover:                      0, //{number} Vertical offset when :hover (available only if control_shadow == true)
+            control_shadow_spread:                      0, //{number} Spread (available only if control_shadow == true)
+            control_shadow_spread_hover:                0, //{number} Spread when :hover (available only if control_shadow == true)
+            control_shadow_blur:                        0, //{number} Blur width (available only if control_shadow == true)
+            control_shadow_blur_hover:                  5, //{number} Blur width when :hover (available only if control_shadow == true)
+            control_shadow_color:                       rgba($color_full_black, 0.4), //{css value} Color (available only if control_shadow == true)
+            control_shadow_color_hover:                 rgba($color_full_black, 0.4), //{css value} Color when :hover (available only if control_shadow == true)
+        control_spacing:                            0.5, //{number} Space between controls
+        control_border_radius:                      0.1, //{number} Border radius of controls
+        control_transition_time_enter:              $qtr_transition_time, //{css value} Transition time in seconds or milliseconds on mouseenter
+        control_transition_time_leave:              700ms, //{css value} Transition time in seconds or milliseconds on mouseleave
+        control_hover_transform:                    scale(1.3) //{css value} CSS transform when hovering control
+    ),
+    left: (
+        display:                                    true, //{boolean} Global display
+        screen_xl:                                  true, //{boolean} Display or not on screen xl
+        screen_lg:                                  true, //{boolean} Display or not on screen lg
+        screen_md:                                  true, //{boolean} Display or not on screen md
+        screen_sm:                                  true, //{boolean} Display or not on screen sm
+        screen_xs:                                  true, //{boolean} Display or not on screen xs
+        scale_xl:                                   1.0, //{number} Scale factor for screen xl
+        scale_lg:                                   1.0, //{number} Scale factor for screen lg
+        scale_md:                                   1.0, //{number} Scale factor for screen md
+        scale_sm:                                   0.7, //{number} Scale factor for screen sm
+        scale_xs:                                   0.5, //{number} Scale factor for screen xs
+        position:                                   middle, //{css value}  top, middle, bottom - Position of the control bar
+        alignment:                                  left, //{css value} left, center, right - Alignment of the control bar
+        offsetX:                                    1, //{number} Horizontal offset (does not apply on center alignment)
+        offsetY:                                    0, //{number} Vertical offset (does not apply on middle position)
+        autohide:                                   true, //{boolean} Enable/diable automatic hide of control bar (Only available for top/center and bottom/center)
+        control_width:                              4, //{number} Width of the control (independant from the media size inside)
+        control_height:                             4, //{number} Height of the control (independant from the media size inside)
+        control_position:                           middle, //{css value} Determines origin of horizontal alignment
+        control_media_size:                         $font_size_base, //{number} Size of the media or text
+        control_media_position:                     middle, //{css value} top, middle, bottom - Position of the text/media inside its container
+        control_media_alignment:                    center, //{css value} left, center, right - Alignment of the text/media inside its container
+        control_media_color:                        qtr-color(6), //{css value} Color of the text/media
+        control_media_color_hover:                  qtr-color(6), //{css value} Color:hover of the text/media
+        control_background_color:                   qtr-color(-6), //{css value} Background color of the text/media container
+        control_background_color_hover:             qtr-color(-6), //{css value} Background color:hover of the text/media container
+        control_background_color_opacity:           0, //{number} Background opacity of the text/media container
+        control_background_color_opacity_hover:     0.85, //{number} Background opacity:hover of the text/media container
+        control_shadow:                             true, //{boolean} Enable / disable control shadow
+            control_shadowX:                            0, //{number} Horizontal offset (available only if control_shadow == true)
+            control_shadowX_hover:                      0, //{number} Horizontal offset when :hover (available only if control_shadow == true)
+            control_shadowY:                            0, //{number} Vertical offset (available only if control_shadow == true)
+            control_shadowY_hover:                      0, //{number} Vertical offset when :hover (available only if control_shadow == true)
+            control_shadow_spread:                      0, //{number} Spread (available only if control_shadow == true)
+            control_shadow_spread_hover:                0, //{number} Spread when :hover (available only if control_shadow == true)
+            control_shadow_blur:                        0, //{number} Blur width (available only if control_shadow == true)
+            control_shadow_blur_hover:                  5, //{number} Blur width when :hover (available only if control_shadow == true)
+            control_shadow_color:                       rgba($color_full_black, 0.4), //{css value} Color (available only if control_shadow == true)
+            control_shadow_color_hover:                 rgba($color_full_black, 0.4), //{css value} Color when :hover (available only if control_shadow == true)
+        control_spacing:                            0.5, //{number} Space between controls
+        control_border_radius:                      0.1, //{number} Border radius of controls
+        control_transition_time_enter:              $qtr_transition_time, //{css value} Transition time in seconds or milliseconds on mouseenter
+        control_transition_time_leave:              700ms, //{css value} Transition time in seconds or milliseconds on mouseleave
+        control_hover_transform:                    scale(1.3) //{css value} CSS transform when hovering control
+    ),
+    right: (
+        display:                                    true, //{boolean} Global display
+        screen_xl:                                  true, //{boolean} Display or not on screen xl
+        screen_lg:                                  true, //{boolean} Display or not on screen lg
+        screen_md:                                  true, //{boolean} Display or not on screen md
+        screen_sm:                                  true, //{boolean} Display or not on screen sm
+        screen_xs:                                  true, //{boolean} Display or not on screen xs
+        scale_xl:                                   1.0, //{number} Scale factor for screen xl
+        scale_lg:                                   1.0, //{number} Scale factor for screen lg
+        scale_md:                                   1.0, //{number} Scale factor for screen md
+        scale_sm:                                   0.7, //{number} Scale factor for screen sm
+        scale_xs:                                   0.5, //{number} Scale factor for screen xs
+        position:                                   middle, //{css value}  top, middle, bottom - Position of the control bar
+        alignment:                                  right, //{css value} left, center, right - Alignment of the control bar
+        offsetX:                                    1, //{number} Horizontal offset (does not apply on center alignment)
+        offsetY:                                    0, //{number} Vertical offset (does not apply on middle position)
+        autohide:                                   true, //{boolean} Enable/diable automatic hide of control bar (Only available for top/center and bottom/center)
+        control_width:                              4, //{number} Width of the control (independant from the media size inside)
+        control_height:                             4, //{number} Height of the control (independant from the media size inside)
+        control_position:                           middle, //{css value} Determines origin of horizontal alignment
+        control_media_size:                         $font_size_base, //{number} Size of the media or text
+        control_media_position:                     middle, //{css value} top, middle, bottom - Position of the text/media inside its container
+        control_media_alignment:                    center, //{css value} left, center, right - Alignment of the text/media inside its container
+        control_media_color:                        qtr-color(6), //{css value} Color of the text/media
+        control_media_color_hover:                  qtr-color(6), //{css value} Color:hover of the text/media
+        control_background_color:                   qtr-color(-6), //{css value} Background color of the text/media container
+        control_background_color_hover:             qtr-color(-6), //{css value} Background color:hover of the text/media container
+        control_background_color_opacity:           0, //{number} Background opacity of the text/media container
+        control_background_color_opacity_hover:     0.85, //{number} Background opacity:hover of the text/media container
+        control_shadow:                             true, //{boolean} Enable / disable control shadow
+            control_shadowX:                            0, //{number} Horizontal offset (available only if control_shadow == true)
+            control_shadowX_hover:                      0, //{number} Horizontal offset when :hover (available only if control_shadow == true)
+            control_shadowY:                            0, //{number} Vertical offset (available only if control_shadow == true)
+            control_shadowY_hover:                      0, //{number} Vertical offset when :hover (available only if control_shadow == true)
+            control_shadow_spread:                      0, //{number} Spread (available only if control_shadow == true)
+            control_shadow_spread_hover:                0, //{number} Spread when :hover (available only if control_shadow == true)
+            control_shadow_blur:                        0, //{number} Blur width (available only if control_shadow == true)
+            control_shadow_blur_hover:                  5, //{number} Blur width when :hover (available only if control_shadow == true)
+            control_shadow_color:                       rgba($color_full_black, 0.4), //{css value} Color (available only if control_shadow == true)
+            control_shadow_color_hover:                 rgba($color_full_black, 0.4), //{css value} Color when :hover (available only if control_shadow == true)
+        control_spacing:                            0.5, //{number} Space between controls
+        control_border_radius:                      0.1, //{number} Border radius of controls
+        control_transition_time_enter:              $qtr_transition_time, //{css value} Transition time in seconds or milliseconds on mouseenter
+        control_transition_time_leave:              700ms, //{css value} Transition time in seconds or milliseconds on mouseleave
+        control_hover_transform:                    scale(1.3) //{css value} CSS transform when hovering control
+    ),
+    hamburger: (
+        display:                                    true, //{boolean} Global display
+        screen_xl:                                  true, //{boolean} Display or not on screen xl
+        screen_lg:                                  true, //{boolean} Display or not on screen lg
+        screen_md:                                  true, //{boolean} Display or not on screen md
+        screen_sm:                                  true, //{boolean} Display or not on screen sm
+        screen_xs:                                  true, //{boolean} Display or not on screen xs
+        scale_xl:                                   1.0, //{number} Scale factor for screen xl
+        scale_lg:                                   1.0, //{number} Scale factor for screen lg
+        scale_md:                                   1.0, //{number} Scale factor for screen md
+        scale_sm:                                   0.7, //{number} Scale factor for screen sm
+        scale_xs:                                   0.5, //{number} Scale factor for screen xs
+        position:                                   top, //{css value}  top, middle, bottom - Position of the control bar
+        alignment:                                  left, //{css value} left, center, right - Alignment of the control bar
+        offsetX:                                    1, //{number} Horizontal offset (does not apply on center alignment)
+        offsetY:                                    1, //{number} Vertical offset (does not apply on middle position)
+        autohide:                                   true, //{boolean} Enable/diable automatic hide of control bar (Only available for top/center and bottom/center)
+        control_width:                              5, //{number} Width of the control (independant from the media size inside)
+        control_height:                             5, //{number} Height of the control (independant from the media size inside)
+        control_position:                           middle, //{css value} Determines origin of horizontal alignment
+        control_media_size:                         $font_size_base, //{number} Size of the media or text
+        control_media_position:                     middle, //{css value} top, middle, bottom - Position of the text/media inside its container
+        control_media_alignment:                    center, //{css value} left, center, right - Alignment of the text/media inside its container
+        control_media_color:                        qtr-color(6), //{css value} Color of the text/media
+        control_media_color_hover:                  qtr-color(6), //{css value} Color:hover of the text/media
+        control_background_color:                   qtr-color(), //{css value} Background color of the text/media container
+        control_background_color_hover:             qtr-color(), //{css value} Background color:hover of the text/media container
+        control_background_color_opacity:           0.95, //{number} Background opacity of the text/media container
+        control_background_color_opacity_hover:     0.05, //{number} Background opacity:hover of the text/media container
+        control_shadow:                             true, //{boolean} Enable / disable control shadow
+            control_shadowX:                            0, //{number} Horizontal offset (available only if control_shadow == true)
+            control_shadowX_hover:                      0, //{number} Horizontal offset when :hover (available only if control_shadow == true)
+            control_shadowY:                            0, //{number} Vertical offset (available only if control_shadow == true)
+            control_shadowY_hover:                      2, //{number} Vertical offset when :hover (available only if control_shadow == true)
+            control_shadow_spread:                      0, //{number} Spread (available only if control_shadow == true)
+            control_shadow_spread_hover:                0, //{number} Spread when :hover (available only if control_shadow == true)
+            control_shadow_blur:                        0, //{number} Blur width (available only if control_shadow == true)
+            control_shadow_blur_hover:                  2, //{number} Blur width when :hover (available only if control_shadow == true)
+            control_shadow_color:                       rgba($color_full_black, 0.4), //{css value} Color (available only if control_shadow == true)
+            control_shadow_color_hover:                 rgba($color_full_black, 0.4), //{css value} Color when :hover (available only if control_shadow == true)
+        control_spacing:                            0, //{number} Space between controls
+        control_border_radius:                      0.1, //{number} Border radius of controls
+        control_transition_time_enter:              $qtr_transition_time, //{css value} Transition time in seconds or milliseconds on mouseenter
+        control_transition_time_leave:              700ms, //{css value} Transition time in seconds or milliseconds on mouseleave
+        control_hover_transform:                    scale(1.2) //{css value} CSS transform when hovering control
+    ),
+    sound-player: (
+        display:                                    true, //{boolean} Global display
+        screen_xl:                                  true, //{boolean} Display or not on screen xl
+        screen_lg:                                  true, //{boolean} Display or not on screen lg
+        screen_md:                                  true, //{boolean} Display or not on screen md
+        screen_sm:                                  true, //{boolean} Display or not on screen sm
+        screen_xs:                                  true, //{boolean} Display or not on screen xs
+        scale_xl:                                   1.0, //{number} Scale factor for screen xl
+        scale_lg:                                   1.0, //{number} Scale factor for screen lg
+        scale_md:                                   1.0, //{number} Scale factor for screen md
+        scale_sm:                                   1.0, //{number} Scale factor for screen sm
+        scale_xs:                                   0.5, //{number} Scale factor for screen xs
+        position:                                   top, //{css value}  top, middle, bottom - Position of the control bar
+        alignment:                                  right, //{css value} left, center, right - Alignment of the control bar
+        offsetX:                                    2, //{number} Horizontal offset (does not apply on center alignment)
+        offsetY:                                    2, //{number} Vertical offset (does not apply on middle position)
+        autohide:                                   false, //{boolean} Enable/diable automatic hide of control bar (Only available for top/center and bottom/center)
+        control_width:                              5, //{number} Width of the control (independant from the media size inside)
+        control_height:                             5, //{number} Height of the control (independant from the media size inside)
+        control_position:                           middle, //{css value} Determines origin of horizontal alignment
+        control_media_size:                         $font_size_base, //{number} Size of the media or text
+        control_media_position:                     middle, //{css value} top, middle, bottom - Position of the text/media inside its container
+        control_media_alignment:                    center, //{css value} left, center, right - Alignment of the text/media inside its container
+        control_media_color:                        qtr-color(6), //{css value} Color of the text/media
+        control_media_color_hover:                  qtr-color(6), //{css value} Color:hover of the text/media
+        control_background_color:                   qtr-color(), //{css value} Background color of the text/media container
+        control_background_color_hover:             qtr-color(), //{css value} Background color:hover of the text/media container
+        control_background_color_opacity:           0.95, //{number} Background opacity of the text/media container
+        control_background_color_opacity_hover:     0.05, //{number} Background opacity:hover of the text/media container
+        control_shadow:                             false, //{boolean} Enable / disable control shadow
+            control_shadowX:                            0, //{number} Horizontal offset (available only if control_shadow == true)
+            control_shadowX_hover:                      0, //{number} Horizontal offset when :hover (available only if control_shadow == true)
+            control_shadowY:                            0, //{number} Vertical offset (available only if control_shadow == true)
+            control_shadowY_hover:                      2, //{number} Vertical offset when :hover (available only if control_shadow == true)
+            control_shadow_spread:                      0, //{number} Spread (available only if control_shadow == true)
+            control_shadow_spread_hover:                0, //{number} Spread when :hover (available only if control_shadow == true)
+            control_shadow_blur:                        0, //{number} Blur width (available only if control_shadow == true)
+            control_shadow_blur_hover:                  2, //{number} Blur width when :hover (available only if control_shadow == true)
+            control_shadow_color:                       rgba($color_full_black, 0.4), //{css value} Color (available only if control_shadow == true)
+            control_shadow_color_hover:                 rgba($color_full_black, 0.4), //{css value} Color when :hover (available only if control_shadow == true)
+        control_spacing:                            0.2, //{number} Space between controls
+        control_border_radius:                      0.1, //{number} Border radius of controls
+        control_transition_time_enter:              $qtr_transition_time, //{css value} Transition time in seconds or milliseconds on mouseenter
+        control_transition_time_leave:              700ms, //{css value} Transition time in seconds or milliseconds on mouseleave
+        control_hover_transform:                    scale(1.1) //{css value} CSS transform when hovering control
+    ),
+    autotour: (
+        display:                                    true, //{boolean} Global display
+        screen_xl:                                  true, //{boolean} Display or not on screen xl
+        screen_lg:                                  true, //{boolean} Display or not on screen lg
+        screen_md:                                  true, //{boolean} Display or not on screen md
+        screen_sm:                                  true, //{boolean} Display or not on screen sm
+        screen_xs:                                  true, //{boolean} Display or not on screen xs
+        scale_xl:                                   1.0, //{number} Scale factor for screen xl
+        scale_lg:                                   1.0, //{number} Scale factor for screen lg
+        scale_md:                                   1.0, //{number} Scale factor for screen md
+        scale_sm:                                   1.0, //{number} Scale factor for screen sm
+        scale_xs:                                   0.5, //{number} Scale factor for screen xs
+        position:                                   bottom, //{css value}  top, middle, bottom - Position of the control bar
+        alignment:                                  right, //{css value} left, center, right - Alignment of the control bar
+        offsetX:                                    1, //{number} Horizontal offset (does not apply on center alignment)
+        offsetY:                                    1, //{number} Vertical offset (does not apply on middle position)
+        autohide:                                   false, //{boolean} Enable/diable automatic hide of control bar (Only available for top/center and bottom/center)
+        control_width:                              4, //{number} Width of the control (independant from the media size inside)
+        control_height:                             4, //{number} Height of the control (independant from the media size inside)
+        control_position:                           middle, //{css value} Determines origin of horizontal alignment
+        control_media_size:                         $font_size_base, //{number} Size of the media or text
+        control_media_position:                     middle, //{css value} top, middle, bottom - Position of the text/media inside its container
+        control_media_alignment:                    center, //{css value} left, center, right - Alignment of the text/media inside its container
+        control_media_color:                        qtr-color(6), //{css value} Color of the text/media
+        control_media_color_hover:                  qtr-color(6), //{css value} Color:hover of the text/media
+        control_background_color:                   qtr-color(), //{css value} Background color of the text/media container
+        control_background_color_hover:             qtr-color(), //{css value} Background color:hover of the text/media container
+        control_background_color_opacity:           0.95, //{number} Background opacity of the text/media container
+        control_background_color_opacity_hover:     0.05, //{number} Background opacity:hover of the text/media container
+        control_shadow:                             false, //{boolean} Enable / disable control shadow
+            control_shadowX:                            0, //{number} Horizontal offset (available only if control_shadow == true)
+            control_shadowX_hover:                      0, //{number} Horizontal offset when :hover (available only if control_shadow == true)
+            control_shadowY:                            0, //{number} Vertical offset (available only if control_shadow == true)
+            control_shadowY_hover:                      2, //{number} Vertical offset when :hover (available only if control_shadow == true)
+            control_shadow_spread:                      0, //{number} Spread (available only if control_shadow == true)
+            control_shadow_spread_hover:                0, //{number} Spread when :hover (available only if control_shadow == true)
+            control_shadow_blur:                        0, //{number} Blur width (available only if control_shadow == true)
+            control_shadow_blur_hover:                  2, //{number} Blur width when :hover (available only if control_shadow == true)
+            control_shadow_color:                       rgba($color_full_black, 0.4), //{css value} Color (available only if control_shadow == true)
+            control_shadow_color_hover:                 rgba($color_full_black, 0.4), //{css value} Color when :hover (available only if control_shadow == true)
+        control_spacing:                            0.2, //{number} Space between controls
+        control_border_radius:                      0.1, //{number} Border radius of controls
+        control_transition_time_enter:              $qtr_transition_time, //{css value} Transition time in seconds or milliseconds on mouseenter
+        control_transition_time_leave:              700ms, //{css value} Transition time in seconds or milliseconds on mouseleave
+        control_hover_transform:                    scale(1.1) //{css value} CSS transform when hovering control
+    )
+);
+
+// Modals
+$modals: (
+    default: (
+        transition_time:                            $qtr_transition_time, //{css value} Transition time in seconds or milliseconds for modal show/hide
+        overlay_color:                              qtr-color(), //{css value} Background color of the overlay
+        overlay_opacity:                            0.9, //{number} Overlay opacity
+        button_close_size:                          1.0, //{number} Button close modal size
+        button_close_color:                         qtr-color(6), //{css value} Button close text/media color
+        button_close_color_hover:                   qtr-color(-6), //{css value} Button close text/media color:hover
+        button_close_opacity:                       0.7, //{number} Button close opacity
+        button_close_opacity_hover:                 0.1, //{number} Button close opacity:hover
+        button_close_border_radius:                 3, //{number} Button close border radius
+        button_close_background_color:              qtr-color(-6), //{css value} Button close background color
+        button_close_background_color_hover:        qtr-color(6), //{css value} Button close background color:hover
+        button_close_effect_hover:                  rotate(90deg), //{css value} CSS transform when hover
+        content_title_font_family:                  qtr-font-family(1), //{css value} Font family of titles
+        content_paragraph:                          qtr-font-family(2), //{css value} Font family of paragraphs
+        content_width:                              48, //{number} Max width of the modal content
+        content_height:                             80, //{number} Max height of the modal content in vh
+        content_padding:                            4, //{number} Padding of the modal content
+        content_background_color:                   $color_full_white, //{css value} Background color of the modal content
+        content_text_color:                         $color_soft_black //{css value} Text color of the modal content
+    ),
+    copy1: (
+        transition_time:                            500ms,
+        overlay_color:                              qtr-color(),
+        overlay_opacity:                            0.5,
+        button_close_size:                          1.3,
+        button_close_color:                         qtr-color(6),
+        button_close_color_hover:                   qtr-color(-6),
+        button_close_opacity:                       0.7,
+        button_close_opacity_hover:                 0.1,
+        button_close_border_radius:                 3,
+        button_close_background_color:              qtr-color(-6),
+        button_close_background_color_hover:        qtr-color(6),
+        button_close_effect_hover:                  rotate(180deg),
+        content_title_font_family:                  qtr-font-family(1),
+        content_paragraph:                          qtr-font-family(2),
+        content_width:                              70,
+        content_height:                             60,
+        content_padding:                            0,
+        content_background_color:                   $color_full_white,
+        content_text_color:                         $color_soft_black
+    ),
+    copy2: (
+        transition_time:                            500ms,
+        overlay_color:                              qtr-color(),
+        overlay_opacity:                            0,
+        button_close_size:                          1.3,
+        button_close_color:                         qtr-color(6),
+        button_close_color_hover:                   qtr-color(-6),
+        button_close_opacity:                       0.7,
+        button_close_opacity_hover:                 0.1,
+        button_close_border_radius:                 3,
+        button_close_background_color:              qtr-color(-6),
+        button_close_background_color_hover:        qtr-color(6),
+        button_close_effect_hover:                  rotate(180deg),
+        content_title_font_family:                  qtr-font-family(1),
+        content_paragraph:                          qtr-font-family(2),
+        content_width:                              48,
+        content_height:                             60,
+        content_padding:                            3,
+        content_background_color:                   $color_full_white,
+        content_text_color:                         $color_soft_black
+    ),
+    copy3: (
+        transition_time:                            1000ms,
+        overlay_color:                              qtr-color(),
+        overlay_opacity:                            0.3,
+        button_close_size:                          1.3,
+        button_close_color:                         qtr-color(6),
+        button_close_color_hover:                   qtr-color(-6),
+        button_close_opacity:                       0.7,
+        button_close_opacity_hover:                 0.1,
+        button_close_border_radius:                 3,
+        button_close_background_color:              qtr-color(-6),
+        button_close_background_color_hover:        qtr-color(6),
+        button_close_effect_hover:                  rotate(180deg),
+        content_title_font_family:                  qtr-font-family(1),
+        content_paragraph:                          qtr-font-family(2),
+        content_width:                              48,
+        content_height:                             60,
+        content_padding:                            0,
+        content_background_color:                   $color_full_white,
+        content_text_color:                         $color_soft_black
+    )
+);

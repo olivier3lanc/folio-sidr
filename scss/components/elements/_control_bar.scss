@@ -1,0 +1,557 @@
+/**
+* Autohide feature
+* ---
+* Always display control bar
+* or only when tourDIV is hovered
+*/
+html {
+    &:not(.touch) {
+        #tourDIV {
+            //For each control bar
+            @each $item, $property in $control_bars {
+                &>.control-bar.#{$item} {
+                    //Only if control bar display is set to true
+                    @if(map-get($property, display) == true) {
+                        //If autohide is set
+                        @if (map-get($property, autohide) == true) {
+                            @if ((map-get($property, position) == bottom or map-get($property, position) == top)){
+                                //Not hover state
+                                @if (map-get($property, position) == bottom){
+                                    bottom: -1.5 * map-get($property, control_height)+$font_size_unit !important;
+                                }@else{
+                                    top: -1.5 * map-get($property, control_height)+$font_size_unit !important;
+                                }
+                            }@else if(map-get($property, position) == middle){
+                                @if(map-get($property, alignment) == left){
+                                    transform: translateX(-120%);
+                                }@else if(map-get($property, alignment) == right){
+                                    transform: translateX(120%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover {
+                //For each control bar
+                @each $item, $property in $control_bars {
+                    &>.control-bar.#{$item} {
+                        //Only if control bar display is set to true
+                        @if(map-get($property, display) == true) {
+                            //If autohide is set
+                            @if (map-get($property, autohide) == true) {
+                                @if ((map-get($property, position) == bottom or map-get($property, position) == top)){
+                                    //Hover state
+                                    @if (map-get($property, position) == bottom){
+                                        bottom: map-get($property, offsetY)+$font_size_unit !important;
+                                    }@else{
+                                        top: map-get($property, offsetY)+$font_size_unit !important;
+                                    }
+                                }@else if(map-get($property, position) == middle){
+                                    @if(map-get($property, alignment) == left){
+                                        transform: translateX(0%);
+                                    }@else if(map-get($property, alignment) == right){
+                                        transform: translateX(0%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.touch {
+        #tourDIV {
+            //For each control bar
+            @each $item, $property in $control_bars {
+                &>.control-bar.#{$item} {
+                    //Only if control bar display is set to true
+                    @if(map-get($property, display) == true) {
+                        //If autohide is set
+                        @if (map-get($property, autohide) == true) {
+                            @if ((map-get($property, position) == bottom or map-get($property, position) == top)){
+                                //Not hover state
+                                @if (map-get($property, position) == bottom){
+                                    bottom: -1.5 * map-get($property, control_height)+$font_size_unit !important;
+                                }@else{
+                                    top: -1.5 * map-get($property, control_height)+$font_size_unit !important;
+                                }
+                            }@else if(map-get($property, position) == middle){
+                                @if(map-get($property, alignment) == left){
+                                    transform: translateX(-120%);
+                                }@else if(map-get($property, alignment) == right){
+                                    transform: translateX(120%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.touch-commands-enabled {
+            #tourDIV {
+                //For each control bar
+                @each $item, $property in $control_bars {
+                    &>.control-bar.#{$item} {
+                        //Only if control bar display is set to true
+                        @if(map-get($property, display) == true) {
+                            //If autohide is set
+                            @if (map-get($property, autohide) == true) {
+                                @if ((map-get($property, position) == bottom or map-get($property, position) == top)){
+                                    //Hover state
+                                    @if (map-get($property, position) == bottom){
+                                        bottom: map-get($property, offsetY)+$font_size_unit !important;
+                                    }@else{
+                                        top: map-get($property, offsetY)+$font_size_unit !important;
+                                    }
+                                }@else if(map-get($property, position) == middle){
+                                    @if(map-get($property, alignment) == left){
+                                        transform: translateX(0%);
+                                    }@else if(map-get($property, alignment) == right){
+                                        transform: translateX(0%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.control-bar {
+    position: absolute;
+    //Default Transition
+    transition: all $qtr_transition_time;
+    //All controls
+    &>ul {
+        display: table;
+        padding: 0;
+        margin: 0 auto;
+        position: relative;
+        //Control
+        &>li {
+            display: table-cell;
+            //When hidden
+            &.hidden {
+                opacity: 0;
+                display: none;
+                //Media container
+                &>span {
+
+                }
+            }
+            //Media container
+            &>span {
+                transition: transform $qtr_transition_time, opacity $qtr_transition_time, width $qtr_transition_time;
+                display: table-cell;
+                line-height: 0;
+                padding: 0;
+                cursor: pointer;
+
+                //Media
+                &>.media {
+                    img, svg {
+                    }
+                    svg {
+                    }
+                }
+            }
+
+            //Separator
+            &.separator {
+                &:last-child {
+                    width: 0+$font_size_unit;
+                }
+            }
+
+            //Hover
+            &:hover {
+                //Media container
+                &>span {
+                    //Media
+                    &>.media {
+                        svg {
+
+                        }
+                    }
+                }
+            }
+
+            //Sound
+            &.seekbar {
+                position: absolute;
+                right: 0;
+                z-index: 0;
+                overflow: hidden;
+                transition: none;
+                &>span {
+                    transition: none;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                }
+            }
+            &.play, &.pause {
+                position: relative;
+                z-index: 1;
+            }
+            &.stop {
+                font-size: 0.5em;
+            }
+        }
+    }
+
+    //For each control bar
+    @each $item, $property in $control_bars {
+        &.#{$item} {
+            //Only if control bar display is set to true
+            @if(map-get($property, display) == true) {
+                //Positioning
+                @if (map-get($property, position) == bottom) {
+                    bottom: map-get($property, offsetY)+$font_size_unit;
+                }@elseif (map-get($property, position) == top) {
+                    top: map-get($property, offsetY)+$font_size_unit;
+                }@elseif (map-get($property, position) == middle) {
+                    top: calc(50% - #{map-get($property, control_height) / 2}#{$font_size_unit});
+                }
+
+                //Alignment
+                @if (map-get($property, alignment) == center) {
+                    //Only if sidebar display is set to true
+                    @if(map-get($sidebar, display) == true) {
+                        width: 100%;
+                    }
+                }@elseif (map-get($property, alignment) == left) {
+                    //Only if sidebar display is set to true
+                    @if(map-get($sidebar, display) == true) {
+                        left: map-get($property, offsetX)+$font_size_unit;
+                    }
+                }@elseif (map-get($property, alignment) == right) {
+                    //Only if sidebar display is set to true
+                    @if(map-get($sidebar, display) == true) {
+                        left: inherit;
+                        right: map-get($property, offsetX)+$font_size_unit;
+                    }
+                }
+
+                //Hover Transition
+                // @if (map-get($property, autohide) == true) {
+                //     @if ((map-get($property, position) == bottom or map-get($property, position) == top)){
+                //         transform: scaleX(1.05);
+                //         @if (map-get($property, position) == bottom){
+                //             bottom: 0 !important;
+                //             box-shadow: inset 0px -20px 20px rgba(0,0,0,0.5);
+                //         }@else{
+                //             top: 0 !important;
+                //             box-shadow: inset 0px 20px 20px rgba(0,0,0,0.5);
+                //         }
+                //         &>ul {
+                //             transition: transform $qtr_transition_time;
+                //             @if (map-get($property, position) == bottom){
+                //                 transform: translateY(#{map-get($property, offsetY) + 2*map-get($property, control_height)}#{$font_size_unit});
+                //             }@else{
+                //                 transform: translateY(#{- map-get($property, offsetY) - 2*map-get($property, control_height)}#{$font_size_unit});
+                //             }
+                //
+                //         }
+                //         &:hover, &.active {
+                //             transform: scaleX(1.0);
+                //             box-shadow: inset 0px 0px 0px rgba(0,0,0,0.5);
+                //             &>ul {
+                //                 @if (map-get($property, position) == bottom){
+                //                     transform: translateY(-#{2*map-get($property, offsetY)}#{$font_size_unit});
+                //                 }@else{
+                //                     transform: translateY(#{2*map-get($property, offsetY)}#{$font_size_unit});
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
+
+            }@else{
+                display: none;
+            }
+
+            //Controls
+            &>ul {
+                //Control
+                &>li {
+                    vertical-align: map-get($property, control_position);
+                    transition: transform $qtr_transition_time, opacity $qtr_transition_time, width $qtr_transition_time;
+
+                    //When hidden
+                    &.hidden {
+                        //Media container
+                        &>span {
+                            // width: 0;
+                        }
+                    }
+
+                    //Media container
+                    &>span {
+                        transition: transform $qtr_transition_time, opacity $qtr_transition_time, width $qtr_transition_time;
+                        vertical-align: map-get($property, control_media_position);
+                        text-align: map-get($property, control_media_alignment);
+                        margin: 0 map-get($property, control_spacing)+$font_size_unit;
+                        height: map-get($property, control_height)+$font_size_unit;
+                        width: map-get($property, control_width)+$font_size_unit;
+                        background-color: rgba(map-get($property, control_background_color), map-get($property, control_background_color_opacity));
+                        @if(map-get($property, control_shadow) == true){
+                            @include qtr-box-shadow(map-get($property, control_shadowX)+$font_size_unit map-get($property, control_shadowY)+$font_size_unit map-get($property, control_shadow_blur)+$font_size_unit map-get($property, control_shadow_spread)+$font_size_unit map-get($property, control_shadow_color));
+                        }
+                        @include qtr-border-radius(map-get($property, control_border_radius)+$font_size_unit);
+                        @include qtr-transition(
+                            all map-get($property, control_transition_time_leave)
+                        );
+
+                        //Media
+                        &>.media {
+                            font-size: map-get($property, control_media_size)+$font_size_unit;
+                            color: map-get($property, control_media_color);
+                            @include qtr-transition(all map-get($property, control_transition_time_leave));
+                            img, svg {
+                                max-height: map-get($property, control_media_size)+$font_size_unit;
+                                max-width: map-get($property, control_media_size)+$font_size_unit;
+                            }
+                            svg {
+                                @include qtr-transition(all map-get($property, control_transition_time_leave));
+                                fill: map-get($property, control_media_color);
+                            }
+                        }
+                    }
+
+                    //Separator
+                    &.separator {
+                        width: map-get($property, control_spacing)+$font_size_unit;
+                        &:last-child {
+                            width: 0+$font_size_unit;
+                        }
+                    }
+
+                    //Hover
+                    &:hover {
+                        //Media container
+                        &>span {
+                            background-color: rgba(map-get($property, control_background_color_hover), map-get($property, control_background_color_opacity_hover));
+                            transform-origin: map-get($property, control_position);
+                            @include qtr-transform(#{map-get($property, control_hover_transform)});
+                            @include qtr-transition(all map-get($property, control_transition_time_enter));
+                            @if(map-get($property, control_shadow) == true){
+                                @include qtr-box-shadow(map-get($property, control_shadowX_hover)+$font_size_unit map-get($property, control_shadowY_hover)+$font_size_unit map-get($property, control_shadow_blur_hover)+$font_size_unit map-get($property, control_shadow_spread_hover)+$font_size_unit map-get($property, control_shadow_color_hover));
+                            }
+
+                            //Media
+                            &>.media {
+                                color: map-get($property, control_media_color_hover);
+                                @include qtr-transition(all map-get($property, control_transition_time_enter));
+                                svg {
+                                    @include qtr-transition(all map-get($property, control_transition_time_enter));
+                                    fill: map-get($property, control_media_color_hover);
+                                }
+                            }
+                        }
+                    }
+
+                    //Sound
+                    &.seekbar {
+                        width: map-get($property, control_width)+$font_size_unit;
+                        border-radius: map-get($property, control_border_radius)+$font_size_unit;
+                        &>span {
+                            background-color: rgba(qtr-color(6),0.5);
+                        }
+                        &:hover {
+                            &>span {
+                                // transform: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //Responsive behaviours
+        @include qtr-screen-xl {
+            &.#{$item} {
+                @if (map-get($property, screen_xl) == true) {
+                    @if (map-get($property, scale_xl) != 1.0) {
+                        &>ul {
+                            font-size: #{map-get($property, scale_xl)}#{$font_size_unit};
+                        }
+                        //Positioning
+                        @if (map-get($property, position) == bottom) {
+                            bottom: map-get($property, offsetY)*map-get($property, scale_xl)+$font_size_unit;
+                        }@elseif (map-get($property, position) == top) {
+                            top: map-get($property, offsetY)*map-get($property, scale_xl)+$font_size_unit;
+                        }@elseif (map-get($property, position) == middle) {
+                            top: calc(50% - #{map-get($property, control_height) * map-get($property, scale_xl) / 2}#{$font_size_unit});
+                        }
+
+                        //Alignment
+                        @if (map-get($property, alignment) == left) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: map-get($property, offsetX)*map-get($property, scale_xl)+$font_size_unit;
+                            }
+                        }@elseif (map-get($property, alignment) == right) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: inherit;
+                                right: map-get($property, offsetX)*map-get($property, scale_xl)+$font_size_unit;
+                            }
+                        }
+                    }
+                }@else{
+                    display: none;
+                }
+            }
+        }
+        @include qtr-screen-lg {
+            &.#{$item} {
+                @if (map-get($property, screen_lg) == true) {
+                    @if (map-get($property, scale_lg) != 1.0) {
+                        &>ul {
+                            font-size: #{map-get($property, scale_lg)}#{$font_size_unit};
+                        }
+                        //Positioning
+                        @if (map-get($property, position) == bottom) {
+                            bottom: map-get($property, offsetY)*map-get($property, scale_lg)+$font_size_unit;
+                        }@elseif (map-get($property, position) == top) {
+                            top: map-get($property, offsetY)*map-get($property, scale_lg)+$font_size_unit;
+                        }@elseif (map-get($property, position) == middle) {
+                            top: calc(50% - #{map-get($property, control_height) * map-get($property, scale_lg) / 2}#{$font_size_unit});
+                        }
+
+                        //Alignment
+                        @if (map-get($property, alignment) == left) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: map-get($property, offsetX)*map-get($property, scale_lg)+$font_size_unit;
+                            }
+                        }@elseif (map-get($property, alignment) == right) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: inherit;
+                                right: map-get($property, offsetX)*map-get($property, scale_lg)+$font_size_unit;
+                            }
+                        }
+                    }
+                }@else{
+                    display: none;
+                }
+            }
+        }
+        @include qtr-screen-md {
+            &.#{$item} {
+                @if (map-get($property, screen_md) == true) {
+                    @if (map-get($property, scale_md) != 1.0) {
+                        &>ul {
+                            font-size: #{map-get($property, scale_md)}#{$font_size_unit};
+                        }
+                        //Positioning
+                        @if (map-get($property, position) == bottom) {
+                            bottom: map-get($property, offsetY)*map-get($property, scale_md)+$font_size_unit;
+                        }@elseif (map-get($property, position) == top) {
+                            top: map-get($property, offsetY)*map-get($property, scale_md)+$font_size_unit;
+                        }@elseif (map-get($property, position) == middle) {
+                            top: calc(50% - #{map-get($property, control_height) * map-get($property, scale_md) / 2}#{$font_size_unit});
+                        }
+
+                        //Alignment
+                        @if (map-get($property, alignment) == left) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: map-get($property, offsetX)*map-get($property, scale_md)+$font_size_unit;
+                            }
+                        }@elseif (map-get($property, alignment) == right) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: inherit;
+                                right: map-get($property, offsetX)*map-get($property, scale_md)+$font_size_unit;
+                            }
+                        }
+                    }
+                }@else{
+                    display: none;
+                }
+            }
+        }
+        @include qtr-screen-sm {
+            &.#{$item} {
+                @if (map-get($property, screen_sm) == true) {
+                    @if (map-get($property, scale_sm) != 1.0) {
+                        &>ul {
+                            font-size: #{map-get($property, scale_sm)}#{$font_size_unit};
+                        }
+                        //Positioning
+                        @if (map-get($property, position) == bottom) {
+                            bottom: map-get($property, offsetY)*map-get($property, scale_sm)+$font_size_unit;
+                        }@elseif (map-get($property, position) == top) {
+                            top: map-get($property, offsetY)*map-get($property, scale_sm)+$font_size_unit;
+                        }@elseif (map-get($property, position) == middle) {
+                            top: calc(50% - #{map-get($property, control_height) * map-get($property, scale_sm) / 2}#{$font_size_unit});
+                        }
+
+                        //Alignment
+                        @if (map-get($property, alignment) == left) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: map-get($property, offsetX)*map-get($property, scale_sm)+$font_size_unit;
+                            }
+                        }@elseif (map-get($property, alignment) == right) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: inherit;
+                                right: map-get($property, offsetX)*map-get($property, scale_sm)+$font_size_unit;
+                            }
+                        }
+                    }
+                }@else{
+                    display: none;
+                }
+            }
+        }
+        @include qtr-screen-xs {
+            &.#{$item} {
+                @if (map-get($property, screen_xs) == true) {
+                    @if (map-get($property, scale_xs) != 1.0) {
+                        &>ul {
+                            font-size: #{map-get($property, scale_xs)}#{$font_size_unit};
+                        }
+                        //Positioning
+                        @if (map-get($property, position) == bottom) {
+                            bottom: map-get($property, offsetY)*map-get($property, scale_xs)+$font_size_unit;
+                        }@elseif (map-get($property, position) == top) {
+                            top: map-get($property, offsetY)*map-get($property, scale_xs)+$font_size_unit;
+                        }@elseif (map-get($property, position) == middle) {
+                            top: calc(50% - #{map-get($property, control_height) * map-get($property, scale_xs) / 2}#{$font_size_unit});
+                        }
+
+                        //Alignment
+                        @if (map-get($property, alignment) == left) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: map-get($property, offsetX)*map-get($property, scale_xs)+$font_size_unit;
+                            }
+                        }@elseif (map-get($property, alignment) == right) {
+                            //Only if sidebar display is set to true
+                            @if(map-get($sidebar, display) == true) {
+                                left: inherit;
+                                right: map-get($property, offsetX)*map-get($property, scale_xs)+$font_size_unit;
+                            }
+                        }
+                    }
+                }@else{
+                    display: none;
+                }
+            }
+        }
+    }//END @each
+
+
+    //When hidden
+    &.hidden {
+        transform: scale(0) translateX(2#{$font_size_unit});
+        opacity: 0;
+    }
+}

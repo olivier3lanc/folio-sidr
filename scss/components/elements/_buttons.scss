@@ -1,0 +1,32 @@
+.btn {
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    border:none;
+    transition: background-color $qtr_transition_time, color $qtr_transition_time;
+    //Colors
+    &.btn-default {
+        background-color: $color_white;
+        color: $color_soft_white;
+        &:hover {
+            background-color: $color_medium_grey;
+            color: $color_full_white;
+        }
+    }
+    &.btn-primary {
+        background-color: qtr-color();
+        color: qtr-color(6);
+        &:hover {
+            background-color: qtr-color(1);
+        }
+    }
+    //Sizes
+    &.btn-xs {
+        font-size: 0.5 + $font_size_unit;
+    }
+    &.btn-lg {
+        font-size: 1.2 + $font_size_unit;
+    }
+    &.btn-xl {
+        font-size: 1.5 + $font_size_unit;
+    }
+}

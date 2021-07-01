@@ -1,0 +1,127 @@
+// Core SASS framework variables
+@import 'quikster';
+
+// Components settings
+@import 'components/settings/_components';
+
+// Main Components
+@import 'components/_fonts';
+@import 'components/_grid';
+@import 'components/_layout';
+@import 'components/_exceptions';
+@import 'components/_utilities';
+
+// Elements
+@import 'components/elements/_buttons';
+@import 'components/elements/_images';
+@import 'components/elements/_links';
+@import 'components/elements/_sidebar';
+@import 'components/elements/_control_bar';
+@import 'components/elements/_modal';
+
+
+//DEV ONLY
+span {
+    &.lightness {
+        bottom: calc(#{map-get($sidebar, width)}#{$qtr_font_size_unit} + 1em);
+        &:after {
+            content: 'Lightness: '+lightness(qtr-color());
+        }
+    }
+    &.color {
+        display: inline-block;
+        vertical-align: middle;
+        width: 3em;
+        height: 3em;
+        margin: 0.2em;
+        &.color-primary {
+            background-color: qtr-color();
+            // width: 4em;
+            // height: 4em;
+        }
+        &.color-primary-contrast-1 {
+            background-color: qtr-color(1);
+        }
+        &.color-primary-contrast-2 {
+            background-color: qtr-color(2);
+        }
+        &.color-primary-contrast-3 {
+            background-color: qtr-color(3);
+        }
+        &.color-primary-contrast-4 {
+            background-color: qtr-color(4);
+        }
+        &.color-primary-contrast-5 {
+            background-color: qtr-color(5);
+        }
+        &.color-primary-contrast-max {
+            width: auto;
+            height: auto;
+            &:after {
+                content: ''+qtr-color(6);
+                font-family: qtr-font-family(2);
+            }
+        }
+
+        &.color-primary-contrast-accent-1 {
+            background-color: qtr-color(-1);
+        }
+        &.color-primary-contrast-accent-2 {
+            background-color: qtr-color(-2);
+        }
+        &.color-primary-contrast-accent-3 {
+            background-color: qtr-color(-3);
+        }
+        &.color-primary-contrast-accent-4 {
+            background-color: qtr-color(-4);
+        }
+        &.color-primary-contrast-accent-5 {
+            background-color: qtr-color(-5);
+        }
+        &.color-primary-contrast-accent-max {
+            width: auto;
+            height: auto;
+            &:after {
+                content: ''+qtr-color(-6);
+                font-family: qtr-font-family(2);
+            }
+        }
+    }
+}
+
+
+
+.font-size-source {
+    &:after {
+        content: ''+$qtr_font_size_source+'';
+    }
+}
+.font-size-small-coef {
+    &:after {
+        content: ''+$qtr_font_size_smallest+'';
+    }
+}
+.font-size-large-coef {
+    &:after {
+        content: ''+$qtr_font_size_largest+'';
+    }
+}
+.font-size-unit {
+    &:after {
+        content: ''+$qtr_font_size_unit+'';
+    }
+}
+
+
+.font-family-primary-name {
+    &:after {
+        font-family: qtr-font-family(1);
+        content:''+qtr-font-family(1);
+    }
+}
+.font-family-secondary-name {
+    &:after {
+        font-family: qtr-font-family(2);
+        content:''+qtr-font-family(2);
+    }
+}

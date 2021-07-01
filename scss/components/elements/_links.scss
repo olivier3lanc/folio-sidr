@@ -1,0 +1,19 @@
+a {
+    font-weight: bold;
+    &.link {
+        transition: background-color $qtr_transition_time, color $qtr_transition_time;
+        &.link-primary {
+            &:link, &:active, &:focus, &:visited {
+                background-color: transparent;
+                color: qtr-color(6);
+                display: inline-block;
+                padding-left: 0.3em;
+                padding-right: 0.3em;
+            }
+            &:hover {
+                background-color: $color_primary;
+                color: qtr-color(6);
+            }
+        }
+    }
+}

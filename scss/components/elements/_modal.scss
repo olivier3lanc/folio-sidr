@@ -1,0 +1,183 @@
+//Global Settings for modal and overlay
+body {
+    //Overlay when modal is opened
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9000;
+        &.active {
+            display: block;
+            visibility: visible;
+        }
+    }
+    //Global settings for modal
+    .modal {
+        display: none;
+        visibility: hidden;
+        @include qtr-transform(translateY(-1em));
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9100;
+        @include qtr-border-radius(3px);
+        line-height: 1.6em;
+        &>.content {
+            margin: 4em auto;
+            h2, h3, h4, h5, h6 {
+                border-bottom: 1px solid rgba(0,0,0,0.5);
+                margin-top: 2em;
+                padding-bottom: 0em;
+            }
+            p {
+                line-height: 1.6em;
+                font-size: $font_size_base+$font_size_unit;
+            }
+            a {
+                &:link, &:active, &:focus, &:visited {
+                    background-color: transparent;
+                    font-weight: bold;
+                    display: inline-block;
+                    padding-left: 0.3em;
+                    padding-right: 0.3em;
+                    color: inherit;
+                }
+                &:hover {
+                    background-color: $color_primary;
+                    color: qtr-color(6);
+                    text-decoration: none;
+                }
+            }
+            iframe {
+                border:0;
+                width: 100%;
+            }
+        }
+        &>.close {
+            position: absolute;
+            display: table;
+            top: 1em;
+            right: 1em;
+            padding: 1em;
+            @include qtr-transition(all $qtr_transition_time);
+            cursor: pointer;
+            &>span {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                line-height: 0;
+            }
+            &:hover {
+
+            }
+        }
+        //When active
+        &.active {
+            display: block;
+            visibility: visible;
+            &.visible {
+                opacity: 1;
+                @include qtr-transform(translateY(0em));
+            }
+        }
+        @include qtr-screen-sm {
+            &>.content {
+                font-size: 0.75em;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+        @include qtr-screen-xs {
+            &>.content {
+                font-size: 0.5em;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+//For each modal
+@each $item, $property in $modals {
+    body {
+        &[data-modal-style="#{$item}"] {
+            .container {
+                -webkit-filter: blur(5px);
+                filter: blur(5px);
+            }
+            .modal {
+                transition: opacity map-get($property, transition_time), transform map-get($property, transition_time);
+                &>.content {
+                    background-color: map-get($property, content_background_color);
+                    max-width:  map-get($property, content_width)+$font_size_unit;
+                    max-height: #{map-get($property, content_height)}vh;
+                    color: map-get($property, content_text_color);
+                    padding: map-get($property, content_padding)+$font_size_unit;
+                    @if(map-get($property, content_height) != auto){
+                        overflow-y: auto;
+                    }
+                    h1, h2, h3, h4, h5, h6 {
+                        font-family: map-get($property, content_title_font_family);
+                    }
+                    p {
+                        font-family: map-get($property, content_paragraph_font_family);
+                    }
+                    iframe {
+                        height: #{map-get($property, content_height)}vh;
+                    }
+                }
+                @include qtr-screen-sm {
+                    &>.content {
+                        max-width: 100%;
+                        max-height: inherit;
+                        iframe {
+                            height: 100vh;
+                        }
+                    }
+                }
+                @include qtr-screen-xs {
+                    &>.content {
+                        max-width: 100%;
+                        max-height: inherit;
+                        iframe {
+                            height: 100vh;
+                        }
+                    }
+                }
+
+                &>.close {
+                    background-color: rgba(map-get($property,button_close_background_color), map-get($property,button_close_opacity));
+                    color: map-get($property,button_close_color);
+                    border-radius: map-get($property,button_close_border_radius)+$font_size_unit;
+                    &>span {
+                        font-size: map-get($property,button_close_size)+$font_size_unit;
+                    }
+                    &:hover {
+                        color: map-get($property,button_close_color_hover);
+                        background-color: rgba(map-get($property,button_close_background_color_hover), map-get($property,button_close_opacity_hover));
+                        @include qtr-transform(#{map-get($property, button_close_effect_hover)});
+                    }
+                }
+            }
+
+            //Overlay when modal is opened
+            .modal-overlay {
+                background-color: map-get($property, overlay_color);
+                @include qtr-transition(opacity #{map-get($property, transition_time)});
+                &.active {
+                    &.visible {
+                        opacity: map-get($property, overlay_opacity);
+                    }
+                }
+            }
+        }
+    }
+}

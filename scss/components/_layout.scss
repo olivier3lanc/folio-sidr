@@ -1,0 +1,153 @@
+body {
+    overflow-x: hidden;
+    // overflow: hidden;
+    .container {
+        .col-menu {
+            position: relative;
+            z-index: 1;
+            transition: all $qtr_transition_time;
+            @if(map-get($sidebar, display) == false){
+                display: none;
+            }@else{
+                @if(map-get($sidebar, alignment) == left){
+                    top: 0em;
+                    left: 0em;
+                    width: map-get($sidebar, width)+$font_size_unit;
+                } @else {
+                    top: 0em;
+                    left: calc(100% - #{map-get($sidebar, width)}#{$font_size_unit});
+                    width: map-get($sidebar, width)+$font_size_unit;
+                }
+            }
+        }
+        .col-tour {
+            position: fixed;
+            transition: all $qtr_transition_time;
+            @if(map-get($sidebar, display) == true){
+                width: calc(100% - #{map-get($sidebar, width)}#{$font_size_unit});
+                top: 0em;
+                @if(map-get($sidebar, alignment) == right){
+                    left: 0em;
+                }@else{
+                    right: 0em;
+                }
+            }@else{
+                width: 100%;
+                height: 100%;
+            }
+
+            #tourDIV {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                perspective: 100vh;
+                //Parallax effect
+                @if($parallax == true){
+                    #panoDIV {
+                        transition: transform 0.3s;
+                        &:hover {
+                            transform: scale(1.01);
+                        }
+                    }
+                }
+            }
+        }
+        &.no-sidebar {
+            .col-menu {
+                opacity: 0;
+                @if(map-get($sidebar, display) == true){
+                    @if(map-get($sidebar, alignment) == left){
+                        left: - map-get($sidebar, width)+$font_size_unit;
+                    }@else{
+                        left: 100%;
+                    }
+                }
+                .sidebar {
+                    overflow-x: hidden;
+                    nav {
+                        ul {
+                            li {
+                                //Group toggle management
+                                &[data-groupid] {
+                                    input[name=groupnav][type=radio]{
+                                        &:checked {
+                                            &+ul[data-groupid] {
+                                                @if(map-get($sidebar, display) == true){
+                                                    @if(map-get($sidebar, alignment) == left){
+                                                        left: - map-get($sidebar, width)+$font_size_unit;
+                                                    }@else{
+                                                        left: 100%;
+                                                    }
+                                                }
+                                                &>li {
+                                                    &.group-heading {
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .col-tour {
+                width: 100%;
+            }
+        }
+        @include qtr-screen-lg {
+            .col-menu {
+                @if(map-get($sidebar, alignment) == left){
+                    width: map-get($sidebar, width_lg)+$font_size_unit;
+                } @else {
+                    left: calc(100% - #{map-get($sidebar, width_lg)}#{$font_size_unit});
+                    width: map-get($sidebar, width_lg)+$font_size_unit;
+                }
+            }
+            .col-tour {
+                width: calc(100% - #{map-get($sidebar, width_lg)}#{$font_size_unit});
+            }
+        }
+        @include qtr-screen-md {
+            .col-menu {
+                @if(map-get($sidebar, alignment) == left){
+                    width: map-get($sidebar, width_md)+$font_size_unit;
+                } @else {
+                    left: calc(100% - #{map-get($sidebar, width_md)}#{$font_size_unit});
+                    width: map-get($sidebar, width_md)+$font_size_unit;
+                }
+            }
+            .col-tour {
+                width: calc(100% - #{map-get($sidebar, width_md)}#{$font_size_unit});
+            }
+        }
+        @include qtr-screen-sm {
+            .col-menu {
+                @if(map-get($sidebar, alignment) == left){
+                    width: map-get($sidebar, width_sm)+$font_size_unit;
+                } @else {
+                    left: calc(100% - #{map-get($sidebar, width_sm)}#{$font_size_unit});
+                    width: map-get($sidebar, width_sm)+$font_size_unit;
+                }
+            }
+            .col-tour {
+                width: calc(100% - #{map-get($sidebar, width_sm)}#{$font_size_unit});
+            }
+        }
+        @include qtr-screen-xs {
+            .col-menu {
+                @if(map-get($sidebar, alignment) == left){
+                    width: map-get($sidebar, width_xs)+$font_size_unit;
+                } @else {
+                    left: calc(100% - #{map-get($sidebar, width_xs)}#{$font_size_unit});
+                    width: map-get($sidebar, width_xs)+$font_size_unit;
+                }
+            }
+            .col-tour {
+                width: calc(100% - #{map-get($sidebar, width_xs)}#{$font_size_unit});
+            }
+        }
+    }
+}

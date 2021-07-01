@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="fr_project_title"><![CDATA[Sidr]]></data>
+  <data name="fr_project_author_name"><![CDATA[Olivier3lanc]]></data>
+  <data name="fr_project_author_url"><![CDATA[https://olivier3lanc.github.io]]></data>
+
+
+  <data name="fr_panogroup70_title"><![CDATA[Panoramas]]></data>
+
+  <data name="fr_pano69_title"><![CDATA[Mer de nuages sur le col du Joly]]></data>
+  <data name="fr_pano71_title"><![CDATA[Pommiers de Mercury]]></data>
+  <data name="fr_pano73_title"><![CDATA[Lac de Bret en automne]]></data>
+  <data name="fr_pano83_title"><![CDATA[Lac de Roselend]]></data>
+  <data name="fr_pano85_title"><![CDATA[Lac d'Annecy]]></data>
+  <data name="fr_pano79_title"><![CDATA[Roselend depuis la Roche Parstire]]></data>
+  <data name="fr_pano81_title"><![CDATA[Arêches Beaufort]]></data>
+  <data name="fr_pano77_title"><![CDATA[Le Monal]]></data>
+  <data name="fr_pano75_title"><![CDATA[Lac de la Thuile]]></data>
+  <data name="fr_pano189_title"><![CDATA[Lac de Grésy-sur-Isère]]></data>
+
+  <data name="fr_panogroup102_title"><![CDATA[Sauvages]]></data>
+
+  <data name="fr_pano101_title"><![CDATA[Aigle royal sous la neige]]></data>
+  <data name="fr_pano103_title"><![CDATA[Gypaète barbu]]></data>
+  <data name="fr_pano105_title"><![CDATA[Gypaète barbu]]></data>
+  <data name="fr_pano113_title"><![CDATA[Marmottons]]></data>
+  <data name="fr_pano115_title"><![CDATA[Marmottons]]></data>
+  <data name="fr_pano117_title"><![CDATA[IMG_4417]]></data>
+  <data name="fr_pano97_title"><![CDATA[Marmotte]]></data>
+  <data name="fr_pano95_title"><![CDATA[Marmotte]]></data>
+  <data name="fr_pano99_title"><![CDATA[Chamois]]></data>
+  <data name="fr_pano125_title"><![CDATA[Ecureuil roux]]></data>
+  <data name="fr_pano127_title"><![CDATA[Ecureuil roux]]></data>
+  <data name="fr_pano137_title"><![CDATA[Ecureuil roux]]></data>
+  <data name="fr_pano107_title"><![CDATA[Ecureuil roux]]></data>
+  <data name="fr_pano108_title"><![CDATA[Cabris de bouquetins]]></data>
+  <data name="fr_pano109_title"><![CDATA[Bouquetin]]></data>
+  <data name="fr_pano119_title"><![CDATA[Vautour fauve]]></data>
+  <data name="fr_pano123_title"><![CDATA[Vautour fauve]]></data>
+  <data name="fr_pano129_title"><![CDATA[Marmotte]]></data>
+  <data name="fr_pano135_title"><![CDATA[Gypaète barbu]]></data>
+  <data name="fr_pano133_title"><![CDATA[Gypaète barbu]]></data>
+  <data name="fr_pano131_title"><![CDATA[Gypaète barbu]]></data>
+  <data name="fr_pano140_title"><![CDATA[Vautour fauve]]></data>
+  <data name="fr_pano139_title"><![CDATA[Vautour fauve]]></data>
+  <data name="fr_pano141_title"><![CDATA[Vautour fauve]]></data>
+
+  <data name="fr_panogroup178_title"><![CDATA[Captifs]]></data>
+
+  <data name="fr_pano177_title"><![CDATA[Chouette Ninoxe]]></data>
+  <data name="fr_pano145_title"><![CDATA[Léopard]]></data>
+  <data name="fr_pano147_title"><![CDATA[Ibis rouge]]></data>
+  <data name="fr_pano149_title"><![CDATA[Bouquetin des Alpes]]></data>
+  <data name="fr_pano151_title"><![CDATA[Faisan doré]]></data>
+  <data name="fr_pano153_title"><![CDATA[Renard roux]]></data>
+  <data name="fr_pano155_title"><![CDATA[Gypaète barbu]]></data>
+  <data name="fr_pano157_title"><![CDATA[Chouettes Harfangs]]></data>
+  <data name="fr_pano159_title"><![CDATA[Flamant rose]]></data>
+  <data name="fr_pano161_title"><![CDATA[Pyguargue à tête blanche]]></data>
+  <data name="fr_pano163_title"><![CDATA[Aigle royal]]></data>
+  <data name="fr_pano165_title"><![CDATA[Aigle royal]]></data>
+  <data name="fr_pano167_title"><![CDATA[Ara bleu]]></data>
+  <data name="fr_pano169_title"><![CDATA[Inséparable]]></data>
+  <data name="fr_pano171_title"><![CDATA[Ara hyacinthe]]></data>
+  <data name="fr_pano173_title"><![CDATA[Drill et son petit]]></data>
+  <data name="fr_pano175_title"><![CDATA[Tigre]]></data>
+  <data name="fr_pano179_title"><![CDATA[Faucon Sacre]]></data>
+  <data name="fr_pano181_title"><![CDATA[Lion]]></data>
+  <data name="fr_pano187_title"><![CDATA[Tigre blanc]]></data>
+  <data name="fr_pano185_title"><![CDATA[Grue couronnée]]></data>
+  <data name="fr_pano183_title"><![CDATA[Gorille]]></data>
+
+
+
+
+
+
+
+
+  <data name="fr_vr_setup_hmd0"><![CDATA[CHOIX DU HMD]]></data>
+  <data name="fr_vr_setup_advanced"><![CDATA[PARAMETRES AVANCES]]></data>
+  <data name="fr_vr_setup_title"><![CDATA[PARAMETRES WEB VR]]></data>
+  <data name="fr_vr_setup_dvn1"><![CDATA[Appareil:]]></data>
+  <data name="fr_vr_setup_siz1"><![CDATA[Taille de l&#39;écran:]]></data>
+  <data name="fr_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="fr_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="fr_vr_setup_hmd3"><![CDATA[Personnaliser]]></data>
+  <data name="fr_vr_setup_cal"><![CDATA[Calibrer le gyroscope]]></data>
+  <data name="fr_vr_setup_sav"><![CDATA[ENREGISTRER]]></data>
+  <data name="fr_vr_setup_rst"><![CDATA[REINITIALISER]]></data>
+  <data name="fr_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="fr_vr_setup_cls"><![CDATA[FERMER]]></data>
+  <data name="fr_vr_setup_m31"><![CDATA[PARAMETRES DU HMD]]></data>
+  <data name="fr_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="fr_vr_setup_dst1"><![CDATA[Distorsion:]]></data>
+  <data name="fr_vr_setup_d2tx"><![CDATA[Distorsion 2:]]></data>
+  <data name="fr_vr_setup_vig1"><![CDATA[Vignettage:]]></data>
+  <data name="fr_vr_setup_cac1"><![CDATA[Aberration chromatique:]]></data>
+  <data name="fr_vr_setup_olp1"><![CDATA[Recouvrement:]]></data>
+  <data name="fr_vr_setup_m35"><![CDATA[RETOUR]]></data>
+  <data name="fr_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="fr_vr_setup_cb2"><![CDATA[Placer l&#39;appareil sur une surface plane et stable[br]puis tapez sur CALIBRER[br]pour corriger la dérive du gyroscope.]]></data>
+  <data name="fr_vr_setup_cb3"><![CDATA[CALIBRER]]></data>
+  <data name="fr_vr_setup_cb4"><![CDATA[REINITIALISER]]></data>
+  <data name="fr_vr_setup_cb5"><![CDATA[RETOUR]]></data>
+  <data name="fr_vr_setup_cb6"><![CDATA[Calibration en cours...]]></data>
+  <data name="fr_vr_setup_cb7"><![CDATA[Calibration réussie]]></data>
+  <data name="fr_vr_setup_cb8"><![CDATA[Echec de la calibration]]></data>
+  <data name="fr_vr_setup_unavailable"><![CDATA[Le mode VR[br]n&#39;est pas disponible sur cet appareil]]></data>
+
+
+  <data name="fr_project_description"><![CDATA[Template Panotour composé de clichés personnels.]]></data>
+
+  <data name="fr_panogroup70_description"><![CDATA[Assemblages d'images]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+  <data name="fr_panogroup102_description"><![CDATA[Photographies d'animaux réalisées dans leur milieu naturel]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <data name="fr_panogroup178_description"><![CDATA[Portraits sur fond noir d'animaux en captivité]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

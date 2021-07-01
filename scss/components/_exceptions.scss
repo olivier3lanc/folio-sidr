@@ -1,0 +1,36 @@
+html {
+    &.touch {
+        body {
+            .control-bar {
+                //Controls
+                &>ul {
+                    //Control
+                    &>li {
+                        &>span {
+                            @include qtr-box-shadow(none);
+                        }
+                        //Hover
+                        &:hover {
+                            //Media container
+                            &>span {
+                                @include qtr-transform(none);
+                                @include qtr-box-shadow(none);
+                            }
+                        }
+                    }
+                }
+            }
+            .container {
+                .col-tour {
+                    #tourDIV {
+                        #panoDIV {
+                            &:hover {
+                                transform: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
